@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery slide Left and Right Toggle Effect</title>
+<style type="text/css">
+    .box{
+        float:left;
+        overflow: hidden;
+        background: #f0e68c;
+
+    }
+    /* Add padding and border to inner content
+    for better animation effect */
+    .box-inner{
+        width: 400px;
+        padding: 10px;
+        border: 1px solid #a29415;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".slide-toggle").click(function(){
+            // $(".box").animate({
+            //     width: "toggle"
+            // });
+            $(".box .left").css( {
+                "-webkit-transform" : "translateX(-100%) " ,
+                "transform": "translateX(-100%)",
+                "transition": "all 1s ease-out"
+            });
+            $(".box .right").css( {
+                "-webkit-transform" : "translateX(100%) " ,
+                "transform": "translateX(100%)",
+                "transition": "all 1s ease-out"
+            });
+        });
+    });
+</script>
+</head>
+<body>
+    <button type="button" class="slide-toggle">Slide Toggle</button>
+    <hr>
+    <div class="box">
+        <div class="box-inner left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. eger aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</div>
+    </div>
+
+    <div class="box">
+        <div class="box-inner right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. eger aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</div>
+    </div>
+
+</body>
+</html>                            
